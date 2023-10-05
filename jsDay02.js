@@ -13,9 +13,9 @@ functionName();
 
 
 function sum(a,b){
-    let sum=a+b;
+    let s=a+b;
     // console.log("a + b = ",sum)
-    return sum;
+    return s;
 }
 
 let s1=sum(2,3)
@@ -30,3 +30,7 @@ console.log('a+b=',sum(5,6))
 // Write a function to calculate the product of 5 numbers ;
 
 // Write a function that takes two numbers,calculate the sum of the numbers in function
+
+// Write a function to calculate the area of a triangle.
+
+// Write a function to calculate the perimeter of a triangle.
