@@ -41,10 +41,26 @@ function reverse(num){
         let r=(i%10)
         reverse=reverse*10+r
     }
-     console.log(reverse)
+     return reverse
 }
-reverse(num)
+// reverse(num)
 
-console.log(Math.floor(123.4))
-console.log(Math.ceil(123.8))
-console.log(Math.trunc(123.8))
+function isPalindrom(num){
+    let reverse=0;
+    for(let i=num;i>0;i=Math.trunc(i/10)){
+        let r=(i%10)
+        reverse=reverse*10+r
+    }
+    if(num===reverse){
+        console.log("NUmber is Palindrom")
+    }else{
+        console.log("NUmber is not Palindrom")
+    }
+
+}
+isPalindrom(1234)
+isPalindrom(12321)
+
+// console.log(Math.floor(123.4))
+// console.log(Math.ceil(123.8))
+// console.log(Math.trunc(123.8))
