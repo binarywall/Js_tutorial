@@ -7,6 +7,27 @@
 </head>
 <body>
     <h2>Java Script</h2>
-    <script src="jsDay02.js"></script>
+    <input type="text" id="search" onkeyup=input()>
+    <br>
+    <pr id="name">List</pr>
+    <!-- <script src="jsDay10.js"></script> -->
+    <script>
+        let list=['Ram','Shyam','Leanne Graham','Ervin Howell','Clementine Bauch','Patricia Lebsack','Chelsey Dietrich','Mrs. Dennis Schulist','Kurtis Weissnat','Nicholas Runolfsdottir V','Glenna Reicher','Clementina DuBuque'];
+
+        document.getElementById("name").innerHTML =list;   
+
+        function input(){
+            var search=document.getElementById('search').value
+            console.log(search)
+
+            let filter=list.filter((ele)=>{
+                if(search=='') return ele;
+                else if(ele.toLowerCase().includes(search.toLowerCase())) return ele
+            })
+
+            document.getElementById("name").innerHTML =filter; 
+        }   
+        
+    </script>
 </body>
 </html>

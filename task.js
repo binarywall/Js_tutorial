@@ -1,0 +1,5 @@
+let rent=prompt("Enter Your Rent")
+let rate=prompt("Enter Your Rate / Km")
+let incriment=prompt("Enter Your Incriment in per 10 Km")
+let totalDis=prompt("Enter Total Distance")
+// console.log(rent)

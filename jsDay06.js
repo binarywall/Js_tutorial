@@ -57,6 +57,20 @@ while(true){
 // write a function to print first 10 prime number
 
 function checkPrime(n){
-    
+    if(n==1 || n==2){
+        return true
+    }else{
+        let count=0;
+        for(let i=2;i<=n/2;i++){
+            if(n%i==0) count++
+        }
+        if(count==0){
+            return true
+        }else {
+            return false
+        }
+    }
 }
+
+
 
