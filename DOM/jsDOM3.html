@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #heading {
+            color: blue;
+            text-align: center;
+        }
+        .para{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">Heading</h1>
+    <p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit quae reiciendis exercitationem sequi voluptate facilis, officiis neque iste ab eos rem odio. Eveniet voluptates eos sunt dolor officia, rem ad!</p>
+    <p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit quae reiciendis exercitationem sequi voluptate facilis, officiis neque iste ab eos rem odio. Eveniet voluptates eos sunt dolor officia, rem ad!</p>
+    <p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit quae reiciendis exercitationem sequi voluptate facilis, officiis neque iste ab eos rem odio. Eveniet voluptates eos sunt dolor officia, rem ad!</p>
+    <p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit quae reiciendis exercitationem sequi voluptate facilis, officiis neque iste ab eos rem odio. Eveniet voluptates eos sunt dolor officia, rem ad!</p>
+    <span class="para1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit quae reiciendis exercitationem sequi voluptate facilis, officiis neque iste ab eos rem odio. Eveniet voluptates eos sunt dolor officia, rem ad!</span>
+    <!-- <p class="para1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit quae reiciendis exercitationem sequi voluptate facilis, officiis neque iste ab eos rem odio. Eveniet voluptates eos sunt dolor officia, rem ad!</p> -->
+</body>
+<script>
+    setTimeout(()=>{
+        document.getElementById('heading').innerHTML="heading from JS"
+        document.getElementsByTagName('span')[0].innerHTML="span"
+        let paraStyle=document.getElementsByClassName('para')
+        console.log(paraStyle);
+        for(let i=0;i<=paraStyle.length;i++){
+            paraStyle[i].style.color='green'
+        }
+            
+        // document.getElementsByClassName('para').style.color="green"
+    },3000)
+</script>
+</html>
