@@ -12,28 +12,84 @@
         .para{
             color: red;
         }
+        #callme{
+            height: 30px;
+            width: 150px;
+            background-color: aquamarine;
+            border-radius: 20px;
+            border: none;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: larger;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+        #callme:hover{
+            background-color: blanchedalmond;
+            transition: ease-in;
+            box-shadow: inset;
+        }
+        #toste{
+            position: absolute;
+            right: 20px;
+            top:50px;
+            z-index: 1;
+            height: 50px;
+            width: 500px;
+            background-color: rgb(162, 253, 102);
+            display: none;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
+        #toste>p{
+            font-size: 1.2rem;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-right: 10px;
+            margin-left: auto;
+        }
     </style>
 </head>
 <body>
+    <div id="toste">
+        <p>This is toste</p>
+        <p id="close" style="cursor: pointer;" onclick="shut()">x</p>
+    </div>
     <h1 id="heading">Heading</h1>
-    <p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit quae reiciendis exercitationem sequi voluptate facilis, officiis neque iste ab eos rem odio. Eveniet voluptates eos sunt dolor officia, rem ad!</p>
-    <p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit quae reiciendis exercitationem sequi voluptate facilis, officiis neque iste ab eos rem odio. Eveniet voluptates eos sunt dolor officia, rem ad!</p>
-    <p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit quae reiciendis exercitationem sequi voluptate facilis, officiis neque iste ab eos rem odio. Eveniet voluptates eos sunt dolor officia, rem ad!</p>
-    <p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit quae reiciendis exercitationem sequi voluptate facilis, officiis neque iste ab eos rem odio. Eveniet voluptates eos sunt dolor officia, rem ad!</p>
+    <input type="button" value="Call me" id="callme" onclick="callme()">
+    <img id="img" src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="">
+    <p class="para" id="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit quae reiciendis exercitationem sequi voluptate facilis, officiis neque iste ab eos rem odio. Eveniet voluptates eos sunt dolor officia, rem ad!</p>
+    <p class="para" id="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit quae reiciendis exercitationem sequi voluptate facilis, officiis neque iste ab eos rem odio. Eveniet voluptates eos sunt dolor officia, rem ad!</p>
+    <p class="para" id="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit quae reiciendis exercitationem sequi voluptate facilis, officiis neque iste ab eos rem odio. Eveniet voluptates eos sunt dolor officia, rem ad!</p>
+    <p class="para" id="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit quae reiciendis exercitationem sequi voluptate facilis, officiis neque iste ab eos rem odio. Eveniet voluptates eos sunt dolor officia, rem ad!</p>
     <span class="para1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit quae reiciendis exercitationem sequi voluptate facilis, officiis neque iste ab eos rem odio. Eveniet voluptates eos sunt dolor officia, rem ad!</span>
     <!-- <p class="para1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit quae reiciendis exercitationem sequi voluptate facilis, officiis neque iste ab eos rem odio. Eveniet voluptates eos sunt dolor officia, rem ad!</p> -->
 </body>
 <script>
+    let el=document.querySelectorAll('.para')
+
+    el.forEach(ele=>ele.style.color='pink')
     setTimeout(()=>{
+        document.getElementsByTagName('img')[0].src="https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630"
         document.getElementById('heading').innerHTML="heading from JS"
         document.getElementsByTagName('span')[0].innerHTML="span"
         let paraStyle=document.getElementsByClassName('para')
-        console.log(paraStyle);
-        for(let i=0;i<=paraStyle.length;i++){
+        console.log(Array.isArray(paraStyle));
+        for(let i=1;i<=paraStyle.length;i++){
             paraStyle[i].style.color='green'
         }
-            
+        // paraStyle.forEach(ele=>ele.style.color='green')   
         // document.getElementsByClassName('para').style.color="green"
     },3000)
+     const callme=()=>{
+       let toste=document.getElementById('toste')
+       toste.style.display='flex'
+        setTimeout(()=>{
+            toste.style.display='none'
+        },5000)
+     }
+     const shut=()=>{
+       let toste=document.getElementById('toste')
+        toste.style.display='none'
+     }
+     
 </script>
 </html>
