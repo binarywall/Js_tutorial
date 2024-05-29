@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Contact Form</title>
+    <style>
+        .table-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="contactForm">
+          <h2>Contact Us</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="first">First Name</label>
+                <input type="text" class="form-control" placeholder="" id="first" required>
+              </div>
+            </div>
+            <!--  col-md-6   -->
+      
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="last">Last Name</label>
+                <input type="text" class="form-control" placeholder="" id="last" required>
+              </div>
+            </div>
+            <!--  col-md-6   -->
+          </div>
+      
+      
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" class="form-control" placeholder="" id="company">
+              </div>
+      
+      
+            </div>
+            <!--  col-md-6   -->
+      
+            <div class="col-md-6">
+      
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" placeholder="phone">
+              </div>
+            </div>
+            <!--  col-md-6   -->
+          </div>
+          <!--  row   -->
+      
+      
+          <div class="row">
+            <div class="col-md-6">
+      
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="email" required>
+              </div>
+            </div>
+            <!--  col-md-6   -->
+      
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="url">Your Website <small>Please include http://</small></label>
+                <input type="url" class="form-control" id="url" placeholder="url">
+              </div>
+      
+            </div>
+            <!--  col-md-6   -->
+          </div>
+          <!--  row   -->
+      
+      
+          <label for="contact-preference">When is the best time of day to reach you?</label>
+          <div class="radio">
+            <label>
+              <input type="radio" name="contact-preference" value="am" checked> Morning
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="contact-preference" value="pm"> Evening
+            </label>
+          </div>
+      
+          <label for="newsletter">Would you like to receive our email newsletter?</label>
+          <div class="checkbox">
+      
+            <label>
+              <input type="checkbox" value="Sure!" id="newsletter"> Sure!
+            </label>
+          </div>
+      
+      
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <div class="table-container">
+          <table class="table table-bordered" id="dataTable">
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Company</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Website</th>
+                <th>Contact Preference</th>
+                <th>Newsletter</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Table rows will be inserted here by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+    </div>
+
+    <script>
+      document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get form values
+        const firstName = document.getElementById('first').value;
+        const lastName = document.getElementById('last').value;
+        const company = document.getElementById('company').value;
+        const phone = document.getElementById('phone').value;
+        const email = document.getElementById('email').value;
+        const url = document.getElementById('url').value;
+        const contactPreference = document.querySelector('input[name="contact-preference"]:checked').value;
+        const newsletter = document.getElementById('newsletter').checked ? 'Yes' : 'No';
+
+        // Create new table row
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+          <td>${firstName}</td>
+          <td>${lastName}</td>
+          <td>${company}</td>
+          <td>${phone}</td>
+          <td>${email}</td>
+          <td>${url}</td>
+          <td>${contactPreference}</td>
+          <td>${newsletter}</td>
+        `;
+
+        // Append new row to table body
+        document.querySelector('#dataTable tbody').appendChild(newRow);
+
+        // Clear form fields
+        document.getElementById('contactForm').reset();
+      });
+    </script>
+</body>
+</html>
